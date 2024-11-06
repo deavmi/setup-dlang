@@ -30,6 +30,7 @@ export async function compiler(description: string, dub_vers: string, gh_token: 
 
 async function dub(version: string, gh_token: string, legacy: boolean): Promise<DubDescription | undefined> {
     // No explicit version from the user
+    console.log("Requested cversion: "+version);
     if (!version.length) {
         // We use the version bundled with the compiler
         if (!legacy) return undefined;
